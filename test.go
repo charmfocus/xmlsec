@@ -43,14 +43,14 @@ MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOb4B1dnwONcW0RoJMa0IOq3O6jiqnTGLUpxEw
 -----END PUBLIC KEY-----`)
 
 func TestSign() {
-	f, _ := os.Open("test.xml")
+	f, _ := os.Open("request.xml")
 	s, _ := ioutil.ReadAll(f)
 	value, err := Sign(s, privateKey)
 	fmt.Println(string(value), err)
 }
 
 func TestVerifySign() {
-	f, _ := os.Open("test.xml")
+	f, _ := os.Open("response.xml")
 	s, _ := ioutil.ReadAll(f)
 	ok, err := VerifySign(s, publicKey)
 	fmt.Println(ok, err)

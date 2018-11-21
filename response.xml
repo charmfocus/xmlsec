@@ -1,0 +1,40 @@
+<document>
+  <response id="response">
+    <head>
+      <Version>1.0.0</Version>
+      <Appid>2018111500000328</Appid>
+      <Function>ant.mybank.merchantprod.merchant.uploadphoto</Function>
+      <RespTime>20181121094253</RespTime>
+      <RespTimeZone>Asia/Shanghai</RespTimeZone>
+      <ReqMsgId>20181121094241BpLnfg</ReqMsgId>
+      <SignType>RSA</SignType>
+      <InputCharset>UTF-8</InputCharset>
+    </head>
+    <body>
+      <RespInfo>
+        <ResultStatus>S</ResultStatus>
+        <ResultCode>0000</ResultCode>
+        <ResultMsg>请求处理成功</ResultMsg>
+      </RespInfo>
+      <PhotoUrl>78906a4f-b729-40fb-a434-ef5cae112651</PhotoUrl>
+      <OutTradeNo>20181121094241BpLnfg</OutTradeNo>
+    </body>
+  </response>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI="">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+<DigestValue>b++dLyCs5sFt/EvbN/FvmyhUZ4o=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+fCTW4K4JAtzBV1waK8O+HQVIOuF+pBtcrJ5AJrd0b8sz0tZkGG3YP227jLCvg7fQ/uJHKC+D6D04
+sjK812r9ldkDu5hvktwpJBacTAh+kJWFurj3weTWYwSmPb7qm7J1Yd1wQ8i6R4J4Uk9winf5rM7y
+wv7KKqqOcfIiRYOblmQ=
+</SignatureValue>
+</Signature></document>

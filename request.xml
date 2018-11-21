@@ -1,0 +1,20 @@
+<document>
+    <request id="request">
+        <head>
+            <version>1.0.0</version>
+            <appid>2016011800000001</appid>
+            <function>ant.ebank.acount.balance.query</function>
+            <reqTime>2017-08-30 21:10:24.051</reqTime>
+            <reqTimeZone>Asia/Shanghai</reqTimeZone>
+            <reqMsgId>7d33d4c6-6b8d-40c9-a4fb-17cb27db0b13</reqMsgId>
+            <signType>RSA</signType>
+            <inputCharset>UTF-8</inputCharset>
+        </head>
+        <body>
+            <partner>202210000000000001025</partner>
+            <cardNo>8888888453427229</cardNo>
+            <currencyCode>156</currencyCode>
+            <cashExCode>CSH</cashExCode>
+        </body>
+    </request>
+</document>
