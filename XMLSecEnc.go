@@ -5,7 +5,6 @@ import (
 
 	"crypto/sha1"
 
-	"bufio"
 	"bytes"
 	"io/ioutil"
 
@@ -169,10 +168,10 @@ func VerifySign(data []byte, publicKey []byte) (bool, error) {
 
 func canonicalizeSignedInfo(data []byte) *bytes.Buffer {
 	writeBuffer := bytes.NewBuffer(make([]byte, 0))
-	bufioReader := bufio.NewReader(bytes.NewReader(data))
+	byteReader := bytes.NewBuffer(data)
 	start := false
 	for {
-		str, err := bufioReader.ReadString('\n')
+		str, err := byteReader.ReadString('\n')
 		if err != nil {
 			break
 		}
