@@ -175,14 +175,24 @@ func canonicalizeSignedInfo(data []byte) *bytes.Buffer {
 		if err != nil {
 			break
 		}
-		if strings.Contains(str, "<SignedInfo>") {
-			str = strings.Replace(str, `>`, ` xmlns="`+XMLDSIGNS+`">`, -1)
+		if strings.Contains(str, `<SignedInfo>`) {
+			str = strings.Replace(str, `<SignedInfo>`, `<SignedInfo xmlns="`+XMLDSIGNS+`">`, -1)
 			start = true
 		}
 		if start {
-			if strings.Contains(str, "</SignedInfo>") {
+			if strings.Contains(str, `</SignedInfo>`) {
+				if strings.Contains(str,`<SignatureValue>`){
+					//查找<SignedInfo>出现的位置
+					st:=strings.Index(str, `<SignedInfo`)
+					//查找<SignedInfo>出现的位置
+					en:=strings.LastIndex(str, `</SignedInfo>`)+len(`</SignedInfo>`)
+					strRune:=[]rune(str)
+					str=string(strRune[st:en])
+				}
 				line := []byte(str)
-				line = line[:len(line)-1]
+				if len(line) > 0 && line[len(line)-1] == '\n' {
+					line = line[:len(line)-1]
+				}
 				if len(line) > 0 && line[len(line)-1] == '\r' {
 					line = line[:len(line)-1]
 				}
