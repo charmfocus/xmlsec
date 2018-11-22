@@ -154,6 +154,7 @@ func VerifySign(data []byte, publicKey []byte) (bool, error) {
 		return false, errors.New("未取到sign")
 	}
 	signatureValue := eml.Text()
+	signatureValue=strings.Replace(signatureValue," ","",-1)
 	if len(signatureValue) < 1 {
 		return false, errors.New("未取到sign")
 	}
