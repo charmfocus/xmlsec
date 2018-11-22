@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a79571b2-fe41-42ee-a233-35ea343cc1f0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/test/response.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/response.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XMLSecEnc.go" beforeDir="false" afterPath="$PROJECT_DIR$/XMLSecEnc.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,61 +22,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLSecEnc.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="XMLSecEnc.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/XMLSecEnc.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="response.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/response.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="31" column="42" lean-forward="true" selection-end-line="39" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="response.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/response.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="38" column="17" lean-forward="true" selection-end-line="39" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="request.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/request.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="rsa.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rsa.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="119" column="39" selection-start-line="119" selection-start-column="39" selection-end-line="119" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="x509.go" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Go/src/crypto/x509/x509.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="397" column="13" lean-forward="true" selection-start-line="397" selection-start-column="13" selection-end-line="397" selection-end-column="13" />
+            <state relative-caret-position="192">
+              <caret line="171" selection-start-line="171" selection-end-line="171" />
+              <folding>
+                <element signature="e#16#165#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,6 +47,7 @@
     <findStrings>
       <find>ds:</find>
       <find>SignedInfo</find>
+      <find>buffer</find>
     </findStrings>
   </component>
   <component name="GOROOT" path="C:\Go" />
@@ -106,8 +60,8 @@
         <option value="$PROJECT_DIR$/test/main.go" />
         <option value="$PROJECT_DIR$/test.go" />
         <option value="$PROJECT_DIR$/response.xml" />
-        <option value="$PROJECT_DIR$/XMLSecEnc.go" />
         <option value="$PROJECT_DIR$/test/response.xml" />
+        <option value="$PROJECT_DIR$/XMLSecEnc.go" />
       </list>
     </option>
   </component>
@@ -234,29 +188,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/request.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/main.go">
+    <entry file="file://C:/Go/src/crypto/x509/x509.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="359">
+          <caret line="397" column="13" lean-forward="true" selection-start-line="397" selection-start-column="13" selection-end-line="397" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.go">
+    <entry file="file://$PROJECT_DIR$/test/response.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        <state relative-caret-position="825">
+          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/response.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
+        <state relative-caret-position="355">
           <caret line="38" column="17" lean-forward="true" selection-end-line="39" selection-end-column="23" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/request.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/rsa.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -265,24 +219,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Go/src/crypto/x509/x509.go">
+    <entry file="file://$PROJECT_DIR$/test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="397" column="13" lean-forward="true" selection-start-line="397" selection-start-column="13" selection-end-line="397" selection-end-column="13" />
+        <state relative-caret-position="234">
+          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/XMLSecEnc.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/response.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="31" column="42" lean-forward="true" selection-end-line="39" selection-end-column="23" />
+        <state relative-caret-position="192">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
+          <folding>
+            <element signature="e#16#165#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

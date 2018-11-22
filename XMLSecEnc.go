@@ -120,11 +120,11 @@ func (this *XmlSec) addSignatureElement(privateKey []byte) error {
 
 func elementToBytes(element tinydom.XMLDocument) (value []byte, err error) {
 	byteBuffer := bytes.NewBuffer(make([]byte, 0))
-	bufioWriter := bufio.NewWriter(byteBuffer)
-
-	tinydom.SaveDocument(element, bufioWriter, tinydom.PrintStream)
-	bufioWriter.Flush()
-	value, err = ioutil.ReadAll(byteBuffer)
+	err=tinydom.SaveDocument(element, byteBuffer, tinydom.PrintStream)
+	if err!=nil{
+		return
+	}
+	value=byteBuffer.Bytes()
 	return
 }
 
@@ -169,8 +169,7 @@ func VerifySign(data []byte, publicKey []byte) (bool, error) {
 
 func canonicalizeSignedInfo(data []byte) *bytes.Buffer {
 	writeBuffer := bytes.NewBuffer(make([]byte, 0))
-	byteBuffer := bytes.NewBuffer(data)
-	bufioReader := bufio.NewReader(byteBuffer)
+	bufioReader := bufio.NewReader(bytes.NewReader(data))
 	start := false
 	for {
 		str, err := bufioReader.ReadString('\n')
