@@ -20,21 +20,21 @@
       <OutTradeNo>20181121094241BpLnfg</OutTradeNo>
     </body>
   </response>
-  <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-    <SignedInfo>
-      <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
-      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
-      <Reference URI="">
-        <Transforms>
-          <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
-        </Transforms>
-        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
-        <DigestValue>b++dLyCs5sFt/EvbN/FvmyhUZ4o=</DigestValue>
-      </Reference>
-    </SignedInfo>
-    <SignatureValue>
-      fCTW4K4JAtzBV1waK8O+HQVIOuF+pBtcrJ5AJrd0b8sz0tZkGG3YP227jLCvg7fQ/uJHKC+D6D04
-      sjK812r9ldkDu5hvktwpJBacTAh+kJWFurj3weTWYwSmPb7qm7J1Yd1wQ8i6R4J4Uk9winf5rM7y
-      wv7KKqqOcfIiRYOblmQ=
-    </SignatureValue>
-  </Signature></document>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+<SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
+<Reference URI="">
+<Transforms>
+<Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
+</Transforms>
+<DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+<DigestValue>b++dLyCs5sFt/EvbN/FvmyhUZ4o=</DigestValue>
+</Reference>
+</SignedInfo>
+<SignatureValue>
+fCTW4K4JAtzBV1waK8O+HQVIOuF+pBtcrJ5AJrd0b8sz0tZkGG3YP227jLCvg7fQ/uJHKC+D6D04
+sjK812r9ldkDu5hvktwpJBacTAh+kJWFurj3weTWYwSmPb7qm7J1Yd1wQ8i6R4J4Uk9winf5rM7y
+wv7KKqqOcfIiRYOblmQ=
+</SignatureValue>
+</Signature></document>
