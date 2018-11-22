@@ -168,6 +168,7 @@ func VerifySign(data []byte, publicKey []byte) (bool, error) {
 }
 
 func canonicalizeSignedInfo(data []byte) *bytes.Buffer {
+	writeBuffer := bytes.NewBuffer(make([]byte, 0))
 	byteBuffer := bytes.NewBuffer(data)
 	bufioReader := bufio.NewReader(byteBuffer)
 	start := false
@@ -197,13 +198,13 @@ func canonicalizeSignedInfo(data []byte) *bytes.Buffer {
 				if len(line) > 0 && line[len(line)-1] == '\r' {
 					line = line[:len(line)-1]
 				}
-				byteBuffer.WriteString(string(line))
+				writeBuffer.WriteString(string(line))
 				break
 			}
-			byteBuffer.WriteString(str)
+			writeBuffer.WriteString(str)
 		}
 	}
-	return byteBuffer
+	return writeBuffer
 }
 
 func rsaSha256Decode(data []byte, sign string, publicKey []byte) (bool, error) {
