@@ -168,10 +168,10 @@ func VerifySign(data []byte, publicKey []byte) (bool, error) {
 
 func canonicalizeSignedInfo(data []byte) *bytes.Buffer {
 	writeBuffer := bytes.NewBuffer(make([]byte, 0))
-	byteReader := bytes.NewBuffer(data)
+	byteBuffer := bytes.NewBuffer(data)
 	start := false
 	for {
-		str, err := byteReader.ReadString('\n')
+		str, err := byteBuffer.ReadString('\n')
 		if err != nil {
 			break
 		}
