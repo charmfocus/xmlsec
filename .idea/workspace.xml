@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a79571b2-fe41-42ee-a233-35ea343cc1f0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/tinydom.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/XMLSecEnc.go" beforeDir="false" afterPath="$PROJECT_DIR$/XMLSecEnc.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/test/main.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -25,11 +27,36 @@
       <file leaf-file-name="XMLSecEnc.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/XMLSecEnc.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+            <state relative-caret-position="1275">
+              <caret line="141" column="14" lean-forward="true" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
               <folding>
-                <element signature="e#16#165#0" expanded="true" />
+                <element signature="e#16#156#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tinydom.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../tinyhubs/tinydom/tinydom.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="655">
+              <caret line="1073" column="17" lean-forward="true" selection-start-line="1073" selection-start-column="17" selection-end-line="1073" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tinydom.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../CloudShop/utils/xmlsec/tinydom.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3150" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tinydom.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tinydom.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -37,8 +64,8 @@
       <file leaf-file-name="buffer.go" pinned="false" current-in-tab="false">
         <entry file="file://C:/Go/src/bytes/buffer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-775">
-              <caret line="162" column="18" lean-forward="true" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="18" />
+            <state relative-caret-position="3950">
+              <caret line="162" column="18" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -70,6 +97,8 @@
         <option value="$PROJECT_DIR$/test.go" />
         <option value="$PROJECT_DIR$/response.xml" />
         <option value="$PROJECT_DIR$/test/response.xml" />
+        <option value="$PROJECT_DIR$/../../tinyhubs/tinydom/tinydom.go" />
+        <option value="$PROJECT_DIR$/tinydom.go" />
         <option value="$PROJECT_DIR$/XMLSecEnc.go" />
       </list>
     </option>
@@ -89,9 +118,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="2590" />
-    <option name="height" value="1312" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="918" />
+    <option name="y" value="292" />
+    <option name="width" value="2520" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -128,9 +159,12 @@
     <property name="settings.editor.selected.configurable" value="go" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\PengKeBao\go\src\github.com\pengkebao\xmlsec" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PengKeBao\go\src\github.com\pengkebao\xmlsec\test" />
+      <recent name="C:\Users\PengKeBao\go\src\github.com\pengkebao\xmlsec" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -146,13 +180,14 @@
     </option>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
+    <frame x="-6" y="-6" width="1293" height="693" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25019547" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32931036" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -166,7 +201,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +210,72 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/bytes/buffer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4050">
+          <caret line="162" column="18" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XMLSecEnc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4325">
+          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+          <folding>
+            <element signature="e#16#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/bytes/buffer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4050">
+          <caret line="162" column="18" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XMLSecEnc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4325">
+          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/bytes/buffer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4050">
+          <caret line="162" column="18" lean-forward="true" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XMLSecEnc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4325">
+          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -218,9 +318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/request.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/rsa.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -238,23 +335,52 @@
     <entry file="file://$PROJECT_DIR$/test/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Go/src/bytes/buffer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775">
-          <caret line="162" column="18" lean-forward="true" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="18" />
+        <state relative-caret-position="3950">
+          <caret line="162" column="18" selection-start-line="162" selection-start-column="18" selection-end-line="162" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../tinyhubs/tinydom/tinydom.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="1073" column="17" lean-forward="true" selection-start-line="1073" selection-start-column="17" selection-end-line="1073" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinydom/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinydom/version">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../CloudShop/utils/xmlsec/tinydom.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3150" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tinydom.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/XMLSecEnc.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="173" column="30" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+        <state relative-caret-position="1275">
+          <caret line="141" column="14" lean-forward="true" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
           <folding>
-            <element signature="e#16#165#0" expanded="true" />
+            <element signature="e#16#156#0" expanded="true" />
           </folding>
         </state>
       </provider>

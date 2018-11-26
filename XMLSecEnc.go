@@ -15,7 +15,6 @@ import (
 
 	"errors"
 
-	"github.com/tinyhubs/tinydom"
 )
 
 const (
@@ -28,12 +27,12 @@ const (
 )
 
 type XmlSec struct {
-	XMLDocument tinydom.XMLDocument
+	XMLDocument XMLDocument
 }
 
 func newXmlSec(reader io.Reader) (*XmlSec, error) {
 	xmlSec := new(XmlSec)
-	doc, err := tinydom.LoadDocument(reader)
+	doc, err := LoadDocument(reader)
 	if err != nil {
 		return xmlSec, err
 	}
@@ -51,33 +50,48 @@ func getSignElement(data []byte, privateKey []byte) (value []byte, err error) {
 		return value, err
 	}
 	signElement.addSignatureElement(privateKey)
-	signElement.XMLDocument.InsertFirstChild(tinydom.NewProcInst("xml", `version="1.0" encoding="UTF-8"`))
+	signElement.XMLDocument.InsertFirstChild(NewProcInst("xml", `version="1.0" encoding="UTF-8"`))
 	value, err = elementToBytes(signElement.XMLDocument)
 	return
 }
 
+/***
+<ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></ds:CanonicalizationMethod>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></ds:SignatureMethod>
+<ds:Reference URI="">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
+<ds:DigestValue>ty6b15mBRPolo28S4jm/q0HLx5Y=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+ */
+
 func (this *XmlSec) addSignatureElement(privateKey []byte) error {
 	documentElement := this.XMLDocument.FirstChildElement("document")
-	signatureElement := tinydom.NewElement("ds:Signature")
-	signatureElement.SetAttribute("xmlns:ds", XMLDSIGNS)
+	signatureElement := NewElement("ds:Signature")
+	//signatureElement.SetAttribute("xmlns:ds", XMLDSIGNS)
 	//需要签名的内容开始
-	signedInfoElement := tinydom.NewElement("ds:SignedInfo")
+	signedInfoElement := NewElement("ds:SignedInfo")
+	signedInfoElement.SetAttribute("xmlns:ds", XMLDSIGNS)
 
-	canonicalizationMethodElement := tinydom.NewElement("ds:CanonicalizationMethod")
+	canonicalizationMethodElement := NewElement("ds:CanonicalizationMethod")
 	canonicalizationMethodElement.SetAttribute("Algorithm", C14N)
 
-	signatureMethodElement := tinydom.NewElement("ds:SignatureMethod")
+	signatureMethodElement := NewElement("ds:SignatureMethod")
 	signatureMethodElement.SetAttribute("Algorithm", RSA_SHA256)
 
-	referenceElement := tinydom.NewElement("ds:Reference")
+	referenceElement := NewElement("ds:Reference")
 	referenceElement.SetAttribute("URI", "")
 
-	transformsElement := tinydom.NewElement("ds:Transforms")
+	transformsElement := NewElement("ds:Transforms")
 
-	transformElement := tinydom.NewElement("ds:SignatureMethod")
+	transformElement := NewElement("ds:Transform")
 	transformElement.SetAttribute("Algorithm", EnvSign)
 
-	digestMethodElement := tinydom.NewElement("ds:DigestMethod")
+	digestMethodElement := NewElement("ds:DigestMethod")
 	digestMethodElement.SetAttribute("Algorithm", SHA1)
 
 	//<ds:DigestValue></ds:DigestValue>
@@ -87,16 +101,19 @@ func (this *XmlSec) addSignatureElement(privateKey []byte) error {
 		return err
 	}
 	digestValue := this.createSha1(documentValue)
-	digestValueElement := tinydom.NewElement("ds:DigestValue")
+	digestValueElement := NewElement("ds:DigestValue")
 	digestValueElement.SetText(digestValue)
 
-	digestMethodElement.InsertEndChild(digestValueElement)
 	transformElement.InsertEndChild(digestMethodElement)
 	transformsElement.InsertEndChild(transformElement)
 	referenceElement.InsertEndChild(transformsElement)
-	signatureMethodElement.InsertEndChild(referenceElement)
-	canonicalizationMethodElement.InsertEndChild(signatureMethodElement)
+	referenceElement.InsertEndChild(transformsElement)
+	referenceElement.InsertEndChild(digestMethodElement)
+	referenceElement.InsertEndChild(digestValueElement)
+
 	signedInfoElement.InsertEndChild(canonicalizationMethodElement)
+	signedInfoElement.InsertEndChild(signatureMethodElement)
+	signedInfoElement.InsertEndChild(referenceElement)
 	signatureElement.InsertEndChild(signedInfoElement)
 
 	//需要签名的内容结束
@@ -105,21 +122,22 @@ func (this *XmlSec) addSignatureElement(privateKey []byte) error {
 	if err != nil {
 		return err
 	}
-	//signinfo签名
 	signeValueText, err := this.rsaSha256Encode(signeValue, privateKey)
 	if err != nil {
 		return err
 	}
-	signatureValueElement := tinydom.NewElement("ds:SignatureValue")
+	signatureValueElement := NewElement("ds:SignatureValue")
 	signatureValueElement.SetText(signeValueText)
+	signedInfoElement.DeleteAttribute("xmlns:ds")
+	signatureElement.SetAttribute("xmlns:ds", XMLDSIGNS)
 	signatureElement.InsertEndChild(signatureValueElement)
 	documentElement.InsertEndChild(signatureElement)
 	return nil
 }
 
-func elementToBytes(element tinydom.XMLDocument) (value []byte, err error) {
+func elementToBytes(element XMLDocument) (value []byte, err error) {
 	byteBuffer := bytes.NewBuffer(make([]byte, 0))
-	err=tinydom.SaveDocument(element, byteBuffer, tinydom.PrintStream)
+	err=SaveDocument(element, byteBuffer, PrintStream)
 	if err!=nil{
 		return
 	}
