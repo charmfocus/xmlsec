@@ -55,20 +55,6 @@ func getSignElement(data []byte, privateKey []byte) (value []byte, err error) {
 	return
 }
 
-/***
-<ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-<ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></ds:CanonicalizationMethod>
-<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></ds:SignatureMethod>
-<ds:Reference URI="">
-<ds:Transforms>
-<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></ds:Transform>
-</ds:Transforms>
-<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod>
-<ds:DigestValue>ty6b15mBRPolo28S4jm/q0HLx5Y=</ds:DigestValue>
-</ds:Reference>
-</ds:SignedInfo>
- */
-
 func (this *XmlSec) addSignatureElement(privateKey []byte) error {
 	documentElement := this.XMLDocument.FirstChildElement("document")
 	signatureElement := NewElement("ds:Signature")
