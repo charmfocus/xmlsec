@@ -14,7 +14,6 @@ import (
 	"strings"
 
 	"errors"
-
 )
 
 const (
@@ -108,6 +107,7 @@ func (this *XmlSec) addSignatureElement(privateKey []byte) error {
 	if err != nil {
 		return err
 	}
+
 	signeValueText, err := this.rsaSha256Encode(signeValue, privateKey)
 	if err != nil {
 		return err
@@ -123,11 +123,11 @@ func (this *XmlSec) addSignatureElement(privateKey []byte) error {
 
 func elementToBytes(element XMLDocument) (value []byte, err error) {
 	byteBuffer := bytes.NewBuffer(make([]byte, 0))
-	err=SaveDocument(element, byteBuffer, PrintStream)
-	if err!=nil{
+	err = SaveDocument(element, byteBuffer, PrintStream)
+	if err != nil {
 		return
 	}
-	value=byteBuffer.Bytes()
+	value = byteBuffer.Bytes()
 	return
 }
 
@@ -157,7 +157,7 @@ func VerifySign(data []byte, publicKey []byte) (bool, error) {
 		return false, errors.New("未取到sign")
 	}
 	signatureValue := eml.Text()
-	signatureValue=strings.Replace(signatureValue," ","",-1)
+	signatureValue = strings.Replace(signatureValue, " ", "", -1)
 	if len(signatureValue) < 1 {
 		return false, errors.New("未取到sign")
 	}
@@ -185,13 +185,13 @@ func canonicalizeSignedInfo(data []byte) *bytes.Buffer {
 		}
 		if start {
 			if strings.Contains(str, `</SignedInfo>`) {
-				if strings.Contains(str,`<SignatureValue>`){
+				if strings.Contains(str, `<SignatureValue>`) {
 					//查找<SignedInfo>出现的位置
-					st:=strings.Index(str, `<SignedInfo`)
+					st := strings.Index(str, `<SignedInfo`)
 					//查找<SignedInfo>出现的位置
-					en:=strings.LastIndex(str, `</SignedInfo>`)+len(`</SignedInfo>`)
-					strRune:=[]rune(str)
-					str=string(strRune[st:en])
+					en := strings.LastIndex(str, `</SignedInfo>`) + len(`</SignedInfo>`)
+					strRune := []rune(str)
+					str = string(strRune[st:en])
 				}
 				line := []byte(str)
 				if len(line) > 0 && line[len(line)-1] == '\n' {

@@ -96,12 +96,12 @@ func signPKCS1v15(src, key []byte, hash crypto.Hash) ([]byte, error) {
 	if block == nil {
 		return nil, errors.New("private key error")
 	}
-	var pri *rsa.PrivateKey
-	pri, err = x509.ParsePKCS1PrivateKey(block.Bytes)
+	// var pri *rsa.PrivateKey
+	pri, err := x509.ParsePKCS8PrivateKey(block.Bytes)
 	if err != nil {
 		return nil, err
 	}
-	return rsa.SignPKCS1v15(rand.Reader, pri, hash, hashed)
+	return rsa.SignPKCS1v15(rand.Reader, pri.(*rsa.PrivateKey), hash, hashed)
 }
 
 func verifyPKCS1v15(src, sig, key []byte, hash crypto.Hash) error {
