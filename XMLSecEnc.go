@@ -132,7 +132,7 @@ func elementToBytes(element XMLDocument) (value []byte, err error) {
 }
 
 func (this *XmlSec) rsaSha256Encode(src []byte, privateKey []byte) (string, error) {
-	sig, err := signPKCS1v15(src, privateKey, crypto.SHA256)
+	sig, err := SignPKCS1v15(src, privateKey, crypto.SHA256)
 	if err != nil {
 		return "", err
 	}
@@ -214,7 +214,7 @@ func rsaSha256Decode(data []byte, sign string, publicKey []byte) (bool, error) {
 	if err != nil {
 		return false, err
 	}
-	err = verifyPKCS1v15(data, signBytes, publicKey, crypto.SHA256)
+	err = VerifyPKCS1v15(data, signBytes, publicKey, crypto.SHA256)
 	if err != nil {
 		return false, err
 	}
