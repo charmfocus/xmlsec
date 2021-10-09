@@ -1,10 +1,12 @@
 package xmlsec
 
 import (
+	"bytes"
 	"crypto"
 	"crypto/rand"
 	"crypto/rsa"
 	"crypto/x509"
+	"encoding/base64"
 	"encoding/pem"
 	"errors"
 )
@@ -91,8 +93,21 @@ func SignPKCS1v15(src, key []byte, hash crypto.Hash) ([]byte, error) {
 	var hashed = h.Sum(nil)
 
 	var err error
+
 	var block *pem.Block
-	block, _ = pem.Decode(key)
+	if bytes.Contains(key, []byte("RSA PRIVATE KEY")) {
+		block, _ = pem.Decode(key)
+	} else {
+		pk, err := base64.StdEncoding.DecodeString(string(key))
+		if err != nil {
+			return nil, err
+		}
+		block = &pem.Block{
+			Type:  "RSA PRIVATE KEY",
+			Bytes: pk,
+		}
+	}
+
 	if block == nil {
 		return nil, errors.New("private key error")
 	}
