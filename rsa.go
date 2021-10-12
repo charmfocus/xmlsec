@@ -126,7 +126,19 @@ func VerifyPKCS1v15(src, sig, key []byte, hash crypto.Hash) error {
 
 	var err error
 	var block *pem.Block
-	block, _ = pem.Decode(key)
+	if bytes.Contains(key, []byte("RSA PUBLIC KEY")) {
+		block, _ = pem.Decode(key)
+	} else {
+		pk, err := base64.StdEncoding.DecodeString(string(key))
+		if err != nil {
+			return err
+		}
+		block = &pem.Block{
+			Type:  "RSA PUBLIC KEY",
+			Bytes: pk,
+		}
+	}
+
 	if block == nil {
 		return errors.New("public key error")
 	}
